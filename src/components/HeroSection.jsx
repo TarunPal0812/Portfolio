@@ -24,15 +24,6 @@ const HeroSection = () => {
             tech—blending functionality with real-world impact.
           </p>
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-            {/* <a
-              href="/cv.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cosmic-button"
-            >
-              Download My CV
-            </a> */}
 
             <a href="#project" className="cosmic-button">
               View My Work
