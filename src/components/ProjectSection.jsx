@@ -3,32 +3,47 @@ import { ArrowRight, ExternalLink,Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
+    title: "AI-Powered Content & Media SaaS",
+    description:
+      "Built AI platform offering free/paid tools for content creation, image editing, and resume analysis",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: [
+      "MERN Stack",
+      "Gemini",
+      "ClipDrop",
+      "Cloudinary",
+      "Clerk",
+      "Tailwindcs",
+    ],
+    demoUrl: "https://craftlyai-client.netlify.app/",
+    githubUrl: "https://github.com/TarunPal0812/craftlyAI-client",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Doctor Appointment Booking System",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "Built a full-stack doctor appointment app with role-based dashboards for Admin, Doctor, and User.",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: [
+      "ReactJS",
+      "NodeJS",
+      "MongoDB",
+      "ExpressJS",
+      "Razorpay",
+      "Cloudinary",
+    ],
+    demoUrl: "https://docappoint-client.netlify.app/",
+    githubUrl: "https://github.com/TarunPal0812/DocAppoint-Client",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Blog Platform with Social Features",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
+      "Developed a blog system supporting user authentication, post creation, likes, comments, and user follow ststem",
     image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
+    tags: ["ReactJS", "NodeJS","ExpressJS", "MySQL", "Tailwindcss","JWT"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/TarunPal0812/Blog-MD",
   },
 ];
 

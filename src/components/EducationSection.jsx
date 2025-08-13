@@ -30,15 +30,15 @@ export const EducationSection = () => {
               SVIST, Kolkata
             </p>
             <p className="text-muted-foreground text-sm mb-1 text-gray-600">
-              2021 – 2025 (Expected)
+              2022 – 2026
             </p>
             <p className="text-gray-600">
-              Coursework: Data Structures, Algorithms, DBMS, Operating Systems,
+              Coursework: Data Structures & Algorithms, DBMS, Operating Systems,
               Computer Networks, Web Development
             </p>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             className="p-6 rounded-2xl border-l-4 border-violet-500 bg-white/90 backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow"
             initial={{ opacity: 0, x: -80 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -86,7 +86,7 @@ export const EducationSection = () => {
               Coursework: Data Structures, Algorithms, DBMS, Operating Systems,
               Computer Networks, Web Development
             </p>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
