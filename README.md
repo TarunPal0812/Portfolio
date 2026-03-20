@@ -1,12 +1,51 @@
-# React + Vite
+# Tarun Pal — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built with **React + Vite**, showcasing my projects, skills, and background as a full-stack web developer.
 
-Currently, two official plugins are available:
+🔗 **Live Site:** [https://tarun-pal.vercel.app](https://tarun-pal.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React, Vite, Tailwind CSS, Framer Motion
+- **Email:** EmailJS
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+
+## Features
+
+- Responsive design with mobile hamburger menu
+- Dark / Light theme toggle
+- Animated hero, about, skills, projects, and education sections
+- Contact form powered by EmailJS
+- Star & meteor background animation
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Project Structure
+
+```
+src/
+├── components/       # Reusable UI components
+├── pages/            # Page-level components
+├── hooks/            # Custom React hooks
+└── lib/              # Utility functions
+```
+
+## Contact
+
+- **Email:** tarunpal0812@gmail.com
+- **LinkedIn:** [Tarun Pal](https://www.linkedin.com/in/tarun-pal-35a7b2275)
+- **GitHub:** [TarunPal0812](https://github.com/TarunPal0812)

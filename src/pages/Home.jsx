@@ -12,17 +12,9 @@ import Footer from "../components/Footer"
 const Home = () => {
   return (
    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-   {/* Theme Toggle has been moved into Navbar */}
-
-   {/* Backeground Effect */}
-
    <StarBackground/>
 
-   {/* Navbar */}
-
    <Navbar/>
-   {/* Main content */}
-
     <main>
       <HeroSection/>
       <AboutMe/>
@@ -31,8 +23,6 @@ const Home = () => {
       <EducationSection/>
       <ContactSection/>
     </main>
-
-   {/* Footer */}
 
    <Footer/>
 

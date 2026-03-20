@@ -60,10 +60,7 @@ const ContactSection = () => {
               <p className="text-muted-foreground text-sm">Feel free to reach out through any of these channels.</p>
             </div>
 
-            {/* Contact Cards */}
             <div className="flex flex-col gap-4 mt-2">
-
-              {/* Email */}
               <a
                 href="mailto:tarunpal0812@gmail.com"
                 className="group flex items-center gap-5 p-4 rounded-xl border border-border/50 bg-card/60 backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
@@ -76,8 +73,6 @@ const ContactSection = () => {
                   <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">tarunpal0812@gmail.com</p>
                 </div>
               </a>
-
-              {/* Phone */}
               <a
                 href="tel:8158988834"
                 className="group flex items-center gap-5 p-4 rounded-xl border border-border/50 bg-card/60 backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
@@ -90,8 +85,6 @@ const ContactSection = () => {
                   <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">+91 81589 88834</p>
                 </div>
               </a>
-
-              {/* Location */}
               <div className="group flex items-center gap-5 p-4 rounded-xl border border-border/50 bg-card/60 backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 transition-all duration-300">
                 <div className="flex items-center justify-center w-12 h-12 shrink-0 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
                   <MapPin className="h-5 w-5 text-primary" />
@@ -104,7 +97,6 @@ const ContactSection = () => {
 
             </div>
 
-            {/* Social links */}
             <div className="pt-2">
               <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-3">Connect With Me</p>
               <div className="flex gap-3 justify-center">
