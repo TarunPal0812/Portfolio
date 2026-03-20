@@ -1,16 +1,29 @@
 import { Briefcase, Code, User } from "lucide-react";
+import { motion as Motion } from "framer-motion";
 
 export const AboutMe = () => {
   return (
     <section id="about" className="py-24 px-4 relative">
       {" "}
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <Motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-5xl font-bold mb-12 text-center"
+        >
           About <span className="text-primary"> Me</span>
-        </h2>
+        </Motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <Motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-6"
+          >
             <h3 className="text-2xl font-semibold">Passionate Web Developer</h3>
 
             <p className="text-muted-foreground">
@@ -40,9 +53,15 @@ export const AboutMe = () => {
                 Download CV
               </a>
             </div>
-          </div>
+          </Motion.div>
 
-          <div className="grid grid-cols-1 gap-6">
+          <Motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="grid grid-cols-1 gap-6"
+          >
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
@@ -88,7 +107,7 @@ export const AboutMe = () => {
                 </div>
               </div>
             </div> */}
-          </div>
+          </Motion.div>
         </div>
       </div>
     </section>

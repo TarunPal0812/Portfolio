@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useToast } from "../hooks/use-toast";
 import { useState,useRef } from "react";
@@ -9,40 +9,39 @@ const ContactSection = () => {
 
     const {toast} = useToast()
     const [isSubmitting, setIsSubmitting] = useState(false)
-    // const form = useRef();
-    // const [sent, setSent] = useState(false);
-    // const [error, setError] = useState(false);
+    const form = useRef();
 
     const handleSubmit = (e)=>{
         e.preventDefault()
         setIsSubmitting(true)
-        setTimeout(()=>{
-            // emailjs
-            //   .sendForm(
-            //     "your_service_id", // e.g., "service_abcd1234"
-            //     "your_template_id", // e.g., "template_xyz789"
-            //     form.current,
-            //     "your_public_key" // e.g., "abcDEF123456789"
-            //   )
-            //   .then(
-            //     (result) => {
-            //       console.log(result.text);
-            //       setSent(true);
-            //       setError(false);
-            //       form.current.reset();
-            //     },
-            //     (error) => {
-            //       console.log(error.text);
-            //       setError(true);
-            //     }
-            //   );
-            toast({
-                title: "Message sent!",
-                description: "Thank you for your message. I'll get back to you soon."
-            })
-            setIsSubmitting(false);
-        },1500)
         
+        emailjs
+          .sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            form.current,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+              toast({
+                  title: "Message sent!",
+                  description: "Thank you for your message. I'll get back to you soon."
+              });
+              form.current.reset();
+              setIsSubmitting(false);
+            },
+            (error) => {
+              console.log(error.text);
+              toast({
+                  title: "Error!",
+                  description: "Oops! Something went wrong. Please try again later.",
+                  variant: "destructive"
+              });
+              setIsSubmitting(false);
+            }
+          );
     }
 
   return (
@@ -56,71 +55,104 @@ const ContactSection = () => {
           open to freelance work, internships, and exciting tech challenges.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-            <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div className="">
-                  <h4 className="font-medium">Email</h4>
-                  <a
-                    href="mailto:tarunpal0812@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors "
-                  >
-                    tarunpal0812@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div className="">
-                  <h4 className="font-medium">Phone</h4>
-                  <a
-                    href="tel:8158988834"
-                    className="text-muted-foreground hover:text-primary transition-colors "
-                  >
-                    8158988834
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div className="">
-                  <h4 className="font-medium">Location</h4>
-                  <a className="text-muted-foreground hover:text-primary transition-colors ">
-                    Baruipur, South 24 Parganas, 700145
-                  </a>
-                </div>
-              </div>
+          <div className="flex flex-col justify-center space-y-5">
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Contact Information</h3>
+              <p className="text-muted-foreground text-sm">Feel free to reach out through any of these channels.</p>
             </div>
-            <div className="pt-8">
-              <h4 className="font-medium mb-4">Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
-                <a href="" target="_blank">
-                  <Linkedin />
+
+            {/* Contact Cards */}
+            <div className="flex flex-col gap-4 mt-2">
+
+              {/* Email */}
+              <a
+                href="mailto:tarunpal0812@gmail.com"
+                className="group flex items-center gap-5 p-4 rounded-xl border border-border/50 bg-card/60 backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+              >
+                <div className="flex items-center justify-center w-12 h-12 shrink-0 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                  <Mail className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-0.5">Email</p>
+                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">tarunpal0812@gmail.com</p>
+                </div>
+              </a>
+
+              {/* Phone */}
+              <a
+                href="tel:8158988834"
+                className="group flex items-center gap-5 p-4 rounded-xl border border-border/50 bg-card/60 backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+              >
+                <div className="flex items-center justify-center w-12 h-12 shrink-0 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                  <Phone className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-0.5">Phone</p>
+                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">+91 81589 88834</p>
+                </div>
+              </a>
+
+              {/* Location */}
+              <div className="group flex items-center gap-5 p-4 rounded-xl border border-border/50 bg-card/60 backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 transition-all duration-300">
+                <div className="flex items-center justify-center w-12 h-12 shrink-0 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                  <MapPin className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-0.5">Location</p>
+                  <p className="text-sm font-semibold text-foreground">Baruipur, South 24 Parganas, 700145</p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Social links */}
+            <div className="pt-2">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-3">Connect With Me</p>
+              <div className="flex gap-3 justify-center">
+                <a
+                  href="https://www.linkedin.com/in/tarun-pal-35a7b2275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-xl border border-border/50 bg-card/60 hover:border-primary/40 hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
                 </a>
-                <a href="" target="_blank">
-                  <Twitter />
+                <a
+                  href="https://x.com/itzz_tarun08"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-xl border border-border/50 bg-card/60 hover:border-primary/40 hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  aria-label="X (Twitter)"
+                >
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.629zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
                 </a>
-                <a href="" target="_blank">
-                  <Instagram />
+                <a
+                  href="https://www.instagram.com/____6174____/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-xl border border-border/50 bg-card/60 hover:border-primary/40 hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
                 </a>
-                <a href="" target="_blank">
-                  <Facebook />
+                <a
+                  href="https://www.facebook.com/tarun.pal.667062"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-xl border border-border/50 bg-card/60 hover:border-primary/40 hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="h-4 w-4" />
                 </a>
               </div>
             </div>
           </div>
           <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-            {/* ref={form} */}
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form ref={form} className="space-y-6" onSubmit={handleSubmit}>
               <div className="">
                 <label
                   htmlFor="name"
@@ -179,16 +211,6 @@ const ContactSection = () => {
                 <Send size={16} />
               </button>
             </form>
-            {/* {sent && (
-              <p className="text-green-600 mt-4 text-center">
-                ✅ Message sent successfully!
-              </p>
-            )}
-            {error && (
-              <p className="text-red-600 mt-4 text-center">
-                ❌ Oops! Something went wrong. Please try again.
-              </p>
-            )} */}
           </div>
         </div>
       </div>

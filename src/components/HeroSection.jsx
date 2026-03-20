@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import { motion as Motion } from "framer-motion";
 
 
 const HeroSection = () => {
@@ -10,25 +11,39 @@ const HeroSection = () => {
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in">Hi, I'm </span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1">
+          <Motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+          >
+            <span>Hi, I'm </span>
+            <span className="text-primary">
               Tarun{" "}
             </span>
-            <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
+            <span className="text-glow ml-2">
               Pal
             </span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+          </Motion.h1>
+          <Motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
+          >
             I build smart, user-focused web apps using the MERN stack and modern
             tech—blending functionality with real-world impact.
-          </p>
-          <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-
-            <a href="#project" className="cosmic-button">
+          </Motion.p>
+          <Motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="pt-6"
+          >
+            <a href="#projects" className="cosmic-button text-lg px-8 py-3">
               View My Work
             </a>
-          </div>  
+          </Motion.div>  
         </div>
       </div>
       {/* Bouncing arrow */}

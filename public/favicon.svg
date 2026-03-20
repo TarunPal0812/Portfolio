@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+  </defs>
+  <!-- Letter T -->
+  <path d="M15 25 H50 V38 H38 V75 H25 V38 H15 Z" fill="url(#grad)" />
+  <!-- Letter P -->
+  <path d="M45 25 H70 Q85 25 85 41 Q85 57 70 57 H57 V75 H45 Z M57 38 V44 H68 Q72 44 72 41 Q72 38 68 38 Z" fill="url(#grad)" />
+</svg>

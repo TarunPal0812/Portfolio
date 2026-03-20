@@ -1,11 +1,11 @@
 import { Ghost } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
     <section className="h-screen flex items-center justify-center bg-white px-6">
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -31,7 +31,7 @@ const NotFound = () => {
         >
           Go Home
         </Link>
-      </motion.div>
+      </Motion.div>
     </section>
   );
 };
