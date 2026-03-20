@@ -17,30 +17,29 @@ const ContactSection = () => {
         
         emailjs
           .sendForm(
-            import.meta.env.VITE_EMAILJS_SERVICE_ID,
-            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            "service_7sp8itv",
+            "template_enyum9e",
             form.current,
-            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            "t4kwLXQwNk_1Zroyq",
           )
           .then(
-            (result) => {
-              console.log(result.text);
+            () => {
               toast({
-                  title: "Message sent!",
-                  description: "Thank you for your message. I'll get back to you soon."
+                title: "Message sent!",
+                description:
+                  "Thank you for your message. I'll get back to you soon.",
               });
               form.current.reset();
               setIsSubmitting(false);
             },
-            (error) => {
-              console.log(error.text);
+            () => {
               toast({
-                  title: "Error!",
-                  description: "Oops! Something went wrong. Please try again later.",
-                  variant: "destructive"
+                title: "Something went wrong!",
+                description: "Please try again or email me directly.",
+                variant: "destructive",
               });
               setIsSubmitting(false);
-            }
+            },
           );
     }
 
